@@ -5,8 +5,8 @@
   "main": "webpack.config.ts",
   "scripts": {
     "start": "webpack serve --env port=3000",
-    "build:prod": "webpack serve --env mode=production",
-    "build:dev": "webpack serve --env mode=development"
+    "build:prod": "webpack  --env mode=production",
+    "build:dev": "webpack  --env mode=development"
   },
   "repository": {
     "type": "git",
