@@ -11,20 +11,19 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     }
 
     const cssLoader = {
-        test: '/\.s[ac]ss$/i',
+        test: /\.s[ac]ss$/i,
         use: [
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            isDev ? 'styles-loader' : MiniCssExtractPlugin.loader,
             {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: {
-                    modules: true,
-                    auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-                    localIdentName: isDev
-                        ? '[path][name]__[local]--[hash:base64:5]'
-                        : '[hash:base64:8]'
+                    modules: {
+                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                        localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]'
+                    },
                 }
             },
-            "sass-loader",
+            'sass-loader',
         ]
     }
 
