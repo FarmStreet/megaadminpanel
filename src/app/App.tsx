@@ -4,15 +4,16 @@ import {useTheme} from "./providers/ThemeProvider";
 import {classNames} from "helpers/classNames";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
+import ThemeSwitcher from "shared/ui/ThemeSwitcher/ui/ThemeSwitcher";
 
 
 const App = () => {
-    const {theme, toggleTheme} = useTheme();
+    const {theme} = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
             <Navbar/>
-            <button onClick={toggleTheme}>переключить</button>
+            <ThemeSwitcher/>
             <Suspense fallback={<div>Loading...</div>}>
                 <AppRouter/>
             </Suspense>
