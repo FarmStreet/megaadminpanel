@@ -37,10 +37,32 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         type: 'asset/resource'
     }
 
+    const babelLoader = {
+        test: /\.[jt]sx?$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env'],
+                plugins: [
+                    ['react-refresh/babel'],
+                    [
+                        'i18next-extract',
+                        {
+                            locales: ['ru', 'en'],
+                            keyAsDefaultValue: true
+                        }
+                    ]
+                ],
+            }
+        }
+    }
+
     return [
+        assetLoader,
+        svgLoader,
+        babelLoader,
         typescriptLoader,
         cssLoader,
-        svgLoader,
-        assetLoader
     ]
 }
