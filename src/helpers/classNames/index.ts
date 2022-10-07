@@ -1,3 +1,3 @@
-import {classNames} from "./lib/classNames";
+import { classNames } from './lib/classNames';
 
-export {classNames}
+export { classNames };
