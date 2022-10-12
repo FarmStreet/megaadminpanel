@@ -3,5 +3,7 @@
   "Главная": "Main",
   "переключить": "toggle",
   "сменить язык": "change language",
-  "Страница не найдена": "Page is not found"
+  "Страница не найдена": "Page is not found",
+  "Произошла непредвиденная ошибка": "An unknown error has occurred",
+  "Перезагрузить страницу": "Reload page"
 }
