@@ -10,7 +10,7 @@ interface SidebarProps {
     className?: string;
 }
 
-const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = ({ className }: SidebarProps) => {
     const { t } = useTranslation();
     const [collapsed, setCollapsed] = useState(false);
 
@@ -38,5 +38,3 @@ const Sidebar = ({ className }: SidebarProps) => {
         </div>
     );
 };
-
-export default Sidebar;
