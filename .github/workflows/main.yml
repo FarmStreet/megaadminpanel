@@ -1,6 +1,10 @@
 name: linting, testing, building
 run-name: ${{ github.actor }} is checking his application
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
